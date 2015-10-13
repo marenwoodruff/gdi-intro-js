@@ -442,7 +442,7 @@ is the default, it will run if the conditions above it are false */
               <p>Make sure to save your prompt to a variable so that you can access the user's response.</p>
 <pre>
   <code>
-var name = prompt('What is your name?');
+var name = prompt('What's your name?');
 document.write('Hi, ' + name + '! I hope you are having a great day!');
   </code>
 </pre>
@@ -463,7 +463,7 @@ document.write('Hi, ' + name + '! I hope you are having a great day!');
               <h3>Loops</h3>
               <p>Loops will execute a block of code a number of times.</p>
               <br />
-              <p>They will run the same code over and over again, and output a different value.</p>
+              <p>Loops will run the same code over and over again, and output a different value.</p>
             </section>
 
             <section>
@@ -478,21 +478,21 @@ document.write('Hi, ' + name + '! I hope you are having a great day!');
 
             <section>
               <h3>For loops</h3>
-              <p>This is the often the loop that you will want to use.</p>
+              <p>This is the most common type of loop.</p>
 <pre>
   <code>
-    //will count 1 to 10
+    // will count from 1 to 10
     for (var i = 1; i &lt;= 10; i++) {
         console.log (i);
-    }
+    } 
   </code>
 </pre>
-              <p>A for loop is the most common type of loop.</p>
               <ul>
-                <li><span class="yellow">Statement 1:</span> sets a variable before the loop starts.</li>
-                <li><span class="yellow">Statement 2:</span> defines the condition for the loop.</li>
-                <li><span class="yellow">Statement 3:</span> is executed each time after the code block ends.</li>
+                <li><span class="yellow">Statement 1:</span> (var i = 1;) sets a variable before the loop starts.</li>
+                <li><span class="yellow">Statement 2:</span> (i &lt;= 10;) defines the condition for the loop.</li>
+                <li><span class="yellow">Statement 3:</span> (i++) is executed each time after the code block ends.</li>
               </ul>
+              <h4>Notice that each statement is separated by a semi-colon</h4>
             </section>
 
             <section>
@@ -522,16 +522,51 @@ document.write('Hi, ' + name + '! I hope you are having a great day!');
             </section>
 
             <section>
-              <h3>x++</h3>
+              <h3>x++ vs. ++x</h3>
+<h4>Postfix</h4>
 <pre>
   <code>
     var x = 9;
     var y = x++; 
-    // y = 9; x = 10; because the '++' happens after the assignment
-    var z = ++x; // z = 10; x = 10;
+    // y = 9; x = 10; 
+    // because the '++' happens after the assignment (postfix)
   </code>
 </pre>
-              <p>If you write the addition sign first, you will change both variables.</p>
+
+<h4>Prefix</h4>
+<pre>
+  <code>
+    var a = 9;
+    var b = ++a; 
+    // b = 10; a = 10; 
+    // because the '++' happens before the assignment (prefix)
+  </code>
+</pre>
+              <p>If you write the addition signs first, you will change both variables.</p>
+            </section>
+
+            <section>
+              <h3>x-- vs. --x</h3>
+              <h4>Postfix</h4>
+<pre>
+  <code>
+    var x = 9;
+    var y = x--; 
+    // y = 9; x = 8; 
+    // because the '--' happens after the assignment (postfix)
+  </code>
+</pre>
+
+<h4>Prefix</h4>
+<pre>
+  <code>
+    var a = 9;
+    var b = --a; 
+    // b = 8; a = 8; 
+    // because the '--' happens before the assignment (prefix)
+  </code>
+</pre>
+              <p>If you write the subtraction signs first, you will change both variables.</p>
             </section>
 
             <section>
@@ -581,7 +616,7 @@ document.write('Hi, ' + name + '! I hope you are having a great day!');
 
             <section>
               <h3>While Loop</h3>
-              <p>While will repeat the same code over and over as long as the specified condition is true.</p>
+              <p>A <span class="yellow">while loop</span> will repeat the same code over and over as long as the specified condition is true.</p>
 <pre>
   <code>
     var bottlesOfBeer = 99;
@@ -597,7 +632,7 @@ document.write('Hi, ' + name + '! I hope you are having a great day!');
 
             <section>
               <h3>Do/While Loop</h3>
-              <p>The do/while loop is a variant of the while loop. The code block will execute once, even if the condition is false, because the code block is executed before the condition is tested.</p>
+              <p>The <span class="yellow">do/while loop</span> is a variant of the while loop. The code block will execute once, even if the condition is false, because the code block is executed before the condition is tested.</p>
 <pre>
   <code>
     var text = "";
@@ -631,13 +666,14 @@ document.write('Hi, ' + name + '! I hope you are having a great day!');
     }
   </code>
 </pre>
-              <p>The difference is that the while loop omits statement 1 and statement 3.</p>
+              <p>The difference is that in a while loop statement 1 and statement 3 are in different places.</p>
             </section>
 
             <section>
 				      <h3>Let's Develop It</h3>
               <br />
               <p>Write a loop that gives you the 9's times table,<br /> from 9 x 1 = 9 to 9 x 12 = 108.</p>
+              <br />
               <p>Finish early? Try using a loop inside a loop to write all the times tables, from 1 to 12.</p>
 			      </section>
 
@@ -666,7 +702,7 @@ document.write('Hi, ' + name + '! I hope you are having a great day!');
               <ul>
                 <li>Declare a variable</li>
                 <li>Assign the variable square brackets</li>
-                <li>Inside of the square brackets, add your list, separated by commas.</li>
+                <li>Inside of the square brackets, add your ordered list, separated by commas.</li>
                 <li>Make sure to end it with a semi-colon</li>
               </ul>
 <pre>
@@ -679,7 +715,7 @@ document.write('Hi, ' + name + '! I hope you are having a great day!');
             <section>
               <h3>Zero Index</h3>
               <br />
-              <p>Arrays have a zero index, which means that the first item in an array is at index 0. The second item is index 1. And so on.</p>
+              <p>Arrays have a zero index, which means that the first item in an array is at index 0. The second item is at index 1. And so on.</p>
 <pre>
   <code>
     var fruit = ['Kiwi', 'Strawberry', 'Mango'];
@@ -705,7 +741,7 @@ document.write('Hi, ' + name + '! I hope you are having a great day!');
 
             <section>
               <h3>Using Arrays</h3>
-              <p>You can access items with <span class="yellow">bracket notation</span> by using the position of the object you want. Programmers start counting at zero.</p>
+              <p>You can access items with <span class="yellow">bracket notation</span> by using the index of the item. Programmers start counting at zero.</p>
 <pre>
   <code>
     var rainbowColors = ['Red', 'Orange', 'Yellow', 'Green',
@@ -718,7 +754,7 @@ document.write('Hi, ' + name + '! I hope you are having a great day!');
 
             <section>
               <h3>Changing arrays</h3>
-              <p>You can use bracket notation to change an item in an array</p>
+              <p>You can use <span class="yellow">bracket notation</span> to change an item in an array</p>
 <pre>
   <code>
     var myFavoriteThings = ['Broccoli', 1024, 'Sherlock'];
@@ -729,8 +765,8 @@ document.write('Hi, ' + name + '! I hope you are having a great day!');
             </section>
 
             <section>
-              <h3>Expanding arrays</h3>
-              <p>Arrays do not have a fixed length. You can use "push" to add something to the end of an array.</p>
+              <h3>Expanding arrays</h3> 
+              <p>Arrays do not have a fixed length. You can use <span class="yellow">push()</span> to add something to the end of an array.</p>
 <pre>
   <code>
     var myFavoriteThings = ['Broccoli', 1024, 'Sherlock'];
@@ -742,7 +778,7 @@ document.write('Hi, ' + name + '! I hope you are having a great day!');
 
             <section>
               <h3>Decreasing arrays</h3>
-              <p>You can use "pop" to pop off the last element in an array.</p>
+              <p>You can use <span class="yellow">pop()</span> to pop off the last element in an array.</p>
 <pre>
   <code>
     var myFavoriteThings = ['Broccoli', 1024, 'Sherlock', 'Dancing'];
@@ -754,7 +790,7 @@ document.write('Hi, ' + name + '! I hope you are having a great day!');
 
             <section>
               <h3>Shifting arrays</h3>
-              <p>You can use "shift" to remove the first element in an array, and shift all of the other elements up one place.</p>
+              <p>You can use <span class="yellow">shift()</span> to remove the first element in an array, and shift all of the other elements up one place.</p>
 <pre>
   <code>
     var myFavoriteThings = ['Broccoli', 1024, 'Sherlock', 'Dancing'];
@@ -766,7 +802,7 @@ document.write('Hi, ' + name + '! I hope you are having a great day!');
 
             <section>
               <h3>unshifting arrays</h3>
-              <p>You can use "unshift" to add an element to the beginning of an array, and shift all of the other elements back one place.</p>
+              <p>You can use <span class="yellow">unshift()</span> to add an element to the beginning of an array, and shift all of the other elements back one place.</p>
 <pre>
   <code>
     var myFavoriteThings = ['Broccoli', 1024, 'Sherlock', 'Dancing'];
@@ -806,7 +842,15 @@ document.write('Hi, ' + name + '! I hope you are having a great day!');
     					<ul>
     						<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide" target="_blank">JavaScript Guide</a>, from the Mozilla Developers Network.</li>
     						<li><a href="http://www.codecademy.com/tracks/javascript" target="_blank">Codecademy</a>, with interactive JavaScript lessons to help you review.</li>
+                <li><a href="http://www.w3schools.com/js/default.asp">W3Schools JavaScript Tutorial</a></li>
     					</ul>
+              <br />
+              <br />
+              <h4>My two favorite JavaScript books: </h4>
+              <ul>
+                <li><a href="http://www.amazon.com/Smarter-Way-Learn-JavaScript-technology/dp/1497408180/ref=sr_1_1?ie=UTF8&qid=1444759970&sr=8-1&keywords=a+smarter+way+to+learn+javascript">A Smarter Way to Learn JavaScript</a>, by Mark Myers</li>
+                <li><a href="http://www.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647/ref=sr_1_1?ie=UTF8&qid=1444759995&sr=8-1&keywords=javascript+and+jquery">JavaScript & jQuery</a>, by Jon Duckett</li>
+              </ul>
 			      </section>
 
             <section>
