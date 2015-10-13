@@ -147,7 +147,7 @@
 
             <section>
               <h3>The if statement</h3>
-              <p>Use an if statement to execute a block of code if a condition is true.</p>
+              <p>Use an <span class="yellow">if statement</span> to execute a block of code if a condition is true.</p>
 <pre>
   <code>
     if (condition) {
@@ -241,8 +241,8 @@
 			      </section>
 
             <section>
-              <h3>The if/else statement</h3>
-              <p>Use else to provide an alternate/default set of instructions.</p>
+              <h3>The if/ else statement</h3>
+              <p>Use <span class="yellow">else</span> to provide an alternate/default set of instructions.</p>
 <pre>
   <code>
   var age = 28;
@@ -253,16 +253,16 @@
       console.log ('Sorry, but you have ' + (16 - age) +
       ' years until you can drive.');
   }
-  
+
 /* you don't need to add a condition to the else block because it 
-is the default, it will run if the condition is false */
+is the default, it will run if the conditions above it are false */
   </code>
 </pre>
             </section>
 
             <section>
-              <h3>The if/else if/else statement</h3>
-              <p>If you have multiple conditions, you can use else if.</p>
+              <h3>The if/ else if/ else statement</h3>
+              <p>If you have multiple conditions, you can use <span class="yellow">else if</span>.</p>
 <pre>
   <code>
     var age = 20;
@@ -323,28 +323,28 @@ is the default, it will run if the condition is false */
 
             <section>
               <h3>Using logical operators</h3>
-              <p>You can use these operators to combine conditions.</p>
+              <p>You can use logical operators to combine conditions.</p>
 <pre>
   <code>
-    var bananas = 5;
-    if (bananas &gt;=2 &amp;&amp; bananas &lt;7) {
-        console.log ('You have a reasonable number of bananas');
-        // both statements need to be true in order for this code to execute
-    } else {
-        console.log ('Check your banana supply');
-    }
+  var bananas = 5;
+  if (bananas &gt;= 2 &amp;&amp; bananas &lt; 7) {
+      console.log('Let's make some banana bread!');
+  // both statements need to be true in order for this code to execute
+  } else {
+      console.log('Would you mind running to the store?');
+  }
   </code>
 </pre>
             </section>
 
             <section>
 				      <h3>Let's Develop It</h3>
-              <p>Add a logical operator to your what to wear program.</p>
+              <p>Add a logical operator to your 'what to wear' program.</p>
 			      </section>
 
             <section>
               <h3>Switch Statement</h3>
-              <p>You can use a switch statement to select one of many code blocks to be executed.</p>
+              <p>You can use a <span class="yellow">switch statement</span>  to select one of many code blocks to be executed.</p>
               <h4>Syntax</h4>
 <pre>
   <code>
@@ -361,6 +361,30 @@ is the default, it will run if the condition is false */
   </code>
 </pre>
               <p>Like an if/else statement, each case is compared to the condition. If there is a match, the associated code is executed.</p>
+            </section>
+
+            <section>
+<pre><code>    var day;
+    switch (new Date().getDay()) {
+    case 0:
+        day = "Sunday"; break;
+    case 1:
+        day = "Monday"; break;
+    case 2:
+        day = "Tuesday"; break;
+    case 3:
+        day = "Wednesday"; break;
+    case 4:
+        day = "Thursday"; break;
+    case 5:
+        day = "Friday"; break;
+    case 6:
+        day = "Saturday"; break;
+    }
+    console.log('Yay! Its ' + day);
+</code></pre>
+              <p>In JS, there is a Date() <span class="yellow">object</span>.  That object has a <span class="yellow">method</span> called getDay().</p>
+              <p>The getDay() method returns the day of the week as a number between 0 and 6. (Sunday=0, Monday=1, Tuesday=2 ...)</p>
             </section>
 
             <section>
