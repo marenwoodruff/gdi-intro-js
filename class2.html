@@ -38,375 +38,767 @@
 		<div class="slides">
         <!-- Opening slide -->
             <section>
-                <img src="images/gdi_logo_badge.png" alt="GDI logo">
-                <h3>JavaScript for Beginners</h3>
-                <h4>Class 2</h4>
+              <img src="images/gdi_logo_badge.png" alt="GDI logo">
+              <h3>JavaScript for Beginners</h3>
+              <h4>Class 2</h4>
+              <p>wifi password: 950eastpaces</p>
+              <p>bathroom password: 532</p>
             </section>
 
 
             <section>
-                <h3>Review</h3>
-                <p>In this code, spot the comments, variables, arithmetic operators, functions, parameters/arguments, and return value.</p>
-                <pre><code>
-function calculateTip(total) {
-    var tipPercent = 0.15; //Can be changed
-    return (total * tipPercent);
-}
-
-var billPreTip = 10;
-var billTip = calculateTip(billPreTip);
-var receipt = 'Meal: ' + billPreTip + ' Tip: ' + billTip +
-    ' Total: ' + (billPreTip + billTip);
-console.log(receipt);
-				</code></pre>
-            </section>
-
-            <section>
-                <h3>Variable Scope</h3>
-                <p>The scope of a variable is how long the computer will remember it.</p>
-            </section>
-            <section>
-                <h3>Global Scope</h3>
-                <p>A variable declared outside a function has a <span class="yellow">global</span> scope and can be accessed anywhere, even in a function.</p>
-                  <pre><code>
-var awesomeGroup = 'Girl Develop It'; //Global scope
-function whatIsAwesome() {
-    console.log (awesomeGroup + ' is pretty awesome.'); //Will work
-}
-whatIsAwesome();
-
-				</code></pre>
-            </section>
-            <section>
-                <h3>Local Scope</h3>
-                <p>A variable declared within a function has a <span class="yellow">local</span> scope and can only be accessed within that function.</p>
-                <pre><code>
-function whatIsAwesome() {
-    var awesomeGroup = 'Girl Develop It'; //Local scope
-    console.log ('I made a variable called awesomeGroup with a value of ' + awesomeGroup); //Will work
-}
-<!--on the slide, line 84 has a purple { and it's closing bracket } on line 87 is white. do they need to be the same color?-->
-whatIsAwesome();
-console.log (awesomeGroup + ' is pretty awesome.'); //Won't work
-				</code></pre>
-            </section>
-
-            <section>
-                <h3>Boolean Variables</h3>
-                <p>Boolean variables represent the logical values True and False</p>
-                <pre><code>
-var catsAreBest = true;
-var dogsRule = false;
-				</code></pre>
-                <p>If you try to use another variable as a boolean, JavaScript will guess. The number 0, the empty string '  ', undefined, and null are considered false, everything else reads as true.</p>
-            </section>
-
-            <section>
-                <h3>The if statement</h3>
-                <p>Use if to decide which lines of code to execute, based on a condition.</p>
-                <pre><code>
-if (condition) {
-  // statements to execute
-}
-				</code></pre>
-                <pre><code>
-var bananas = 5;
-if (bananas &gt; 0) {
-  console.log ('You have some bananas!');
-}
-				</code></pre>
-            </section>
-            <section>
-				<h3>Comparison Operators</h3>
-                <table class="smalltext">
-                    <thead>
-                      <tr>
-                        <th width="150px">Example</th>
-                        <th width="250px">Name</th>
-                        <th>Result</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                       <td>a == b</td>
-                       <td>Equal</td>
-                       <td><strong><code>TRUE</code></strong> if a is equal to b (can be different types).</td>
-                      </tr>
-                      <tr>
-                       <td>a === b</td>
-                       <td>Identical</td>
-                       <td>
-                        <strong><code>TRUE</code></strong> if a is equal to b, and the same type. </td>
-                      </tr>
-                      <tr>
-                       <td>a != b</td>
-                       <td>Not equal</td>
-                       <td><strong><code>TRUE</code></strong> if a is not equal to b (can be different types).</td>
-                      </tr>
-                      <tr>
-                       <td>a !== b</td>
-                       <td>Not identical</td>
-                       <td>
-                        <strong><code>TRUE</code></strong> if a is not equal to b, or they are not the same type.</td>
-                      </tr>
-                      <tr>
-                       <td>a &lt; b</td>
-                       <td>Less than</td>
-                       <td><strong><code>TRUE</code></strong> if a is strictly less than b.</td>
-                      </tr>
-                      <tr>
-                       <td>a &gt; b</td>
-                       <td>Greater than</td>
-                       <td><strong><code>TRUE</code></strong> if a is strictly greater than b.</td>
-                      </tr>
-                      <tr>
-                       <td>a &lt;= b</td>
-                       <td>Less than or equal to </td>
-                       <td><strong><code>TRUE</code></strong> if a is less than or equal to b.</td>
-                      </tr>
-                      <tr>
-                       <td>a &gt;= b</td>
-                       <td>Greater than or equal to </td>
-                       <td><strong><code>TRUE</code></strong> if a is greater than or equal to b.</td>
-                      </tr>
-                    </tbody>
-                </table>
-			</section>
-            <section>
-                <h3>Watch out!</h3>
-                <p>Don't mix up = and ==</p>
-            </section>
-            <section>
-				<h3>Let's Develop It</h3>
-                <p>Make a variable called "temperature." Write some code that tells you to put on a coat if it is below 50 degrees.</p>
-			</section>
-
-            <section>
-                <h3>The if/else statement</h3>
-                <p>Use else to provide an alternate set of instructions.</p>
-                <pre><code>
-var age = 28;
-if (age &gt;= 16) {
-    console.log ('Yay, you can drive!');
-} else {
-    console.log ('Sorry, but you have ' + (16 - age) +
-    ' years until you can drive.');
-}
-				</code></pre>
-            </section>
-            <section>
-                <h3>The if/else if/else statement</h3>
-                <p>If you have multiple conditions, you can use else if.</p>
-                <pre><code>
-var age = 20;
-if (age &gt;= 35) {
-    console.log('You can vote AND hold any place in government!');
-} else if (age &gt;= 25) {
-    console.log('You can vote AND run for the Senate!');
-} else if (age &gt;= 18) {
-    console.log('You can vote!');
-} else {
-    console.log('You can\'t vote, but you can
-    still write your representatives.');
-}
-				</code></pre>
-            </section>
-             <section>
-				<h3>Let's Develop It</h3>
-                <p>Modify your "wear a coat" code for these conditions:</p>
-                <ol>
-                    <li>If it is less than 50 degrees, wear a coat.</li>
-                    <li>If it is less than 30 degrees, wear a coat and a hat.</li>
-                    <li>If it is less than 0 degrees, stay inside.</li>
-                    <li>Otherwise, wear whatever you want.</li>
-                </ol>
-			</section>
-            <section>
-				<h3>Logical Operators</h3>
-                <table>
-                    <thead>
-                      <tr>
-                        <th width="200px">Example</th>
-                        <th width="150px">Name</th>
-                        <th>Result</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                       <td>a &amp;&amp; b</td>
-                       <td>And</td>
-                       <td><strong><code>TRUE</code></strong> if both a and b are <strong><code>TRUE</code></strong>.</td>
-                      </tr>
-                      <tr>
-                      <td>a || b</td>
-                       <td>Or</td>
-                       <td><strong><code>TRUE</code></strong> if either a or b is <strong><code>TRUE</code></strong>.</td>
-                      </tr>
-                      <tr>
-                       <td>! a</td>
-                       <td>Not</td>
-                       <td><strong><code>TRUE</code></strong> if a is not <strong><code>TRUE</code></strong>.</td>
-                      </tr>
-                     </tbody>
-                </table>
-			</section>
-            <section>
-                <h3>Using logical operators</h3>
-                <p>You can use these operators to combine conditions.</p>
-                <pre><code>
-var bananas = 5;
-if (bananas &gt;=2 &amp;&amp; bananas &lt;7) {
-    console.log ('You have a reasonable number of bananas');
-} else {
-    console.log ('Check your banana supply');
-}
-				</code></pre>
-            </section>
-            <section>
-				<h3>Let's Develop It</h3>
-                <p>Add a logical operator to your what to wear program.</p>
-			</section>
-
-            <section>
-                <h3>While loops</h3>
-                <p>While will repeat the same code over and over until some condition is met.</p>
-                <pre><code>
-var bottlesOfBeer = 99;
-while (bottlesOfBeer &gt;= 1) {
-    console.log (bottlesOfBeer + ' bottles of beer on the wall');
-    bottlesOfBeer = bottlesOfBeer - 9;
-}
-				</code></pre>
-            </section>
-            <section>
-				<h3>Infinite Loops</h3>
-                <p>Make sure something changes in the loop, or your loop will go on forever...</p>
-			</section>
-            <section>
-                <h3>For loops</h3>
-                <p>For loops are very similar, but you declare a counter in the statement.</p>
-                <pre><code>
-//will count 1 to 10
-for (var i = 1; i &lt;= 10; i++) {
-    console.log (i);
-}
-				</code></pre>
-            </section>
-            <section>
-                <h3>Loops and logic</h3>
-                <p>You can add other statements or logical operators inside the loops.</p>
-                <pre><code>
-//Count from 1 to 50
-for (var i = 1; i &lt;= 50; i++) {
-    console.log (i);
-    //Says 'Buzz' after multiples of three
-    if (i % 3 == 0) {
-        console.log (' Buzz');
+              <h3>Review</h3>
+              <p>In this code, spot the comments, variables, arithmetic operators, functions, parameters/arguments, and return value.</p>
+<pre>
+  <code>
+    function calculateTip(total) {
+        var tipPercent = 0.20; 
+        return (total * tipPercent);
     }
-    //Says 'Bang' after multiples of five
-    if (i % 5 == 0) {
-        console.log (' Bang');
-    }
-}
-				</code></pre>
+
+    var billPreTip = 10;
+    var billTip = calculateTip(billPreTip);
+    var receipt = 'Meal: ' + billPreTip + ' Tip: ' + billTip +
+        ' Total: ' + (billPreTip + billTip);
+    console.log(receipt);
+  </code>
+</pre>
             </section>
+
             <section>
-                <h3>Break</h3>
-                <p>To exit a loop, use the break statement.</p>
-                <pre><code>
-//Count from 100 to 200
-for (var i = 100; i &lt;= 200; i++) {
-    console.log('Testing ' + i);
-    //Stop at the first multiple of 7
-    if (i % 7 == 0) {
-        console.log('Found it! ' + i);
+<pre>
+  <code>    function calculateTip(total) {
+        var tipPercent = 0.20; 
+        return (total * tipPercent);
+    }
+
+    var billPreTip = 10;
+    var billTip = calculateTip(billPreTip);
+    var receipt = 'Meal: ' + billPreTip + ' Tip: ' + billTip +
+        ' Total: ' + (billPreTip + billTip);
+    console.log(receipt);</code>
+</pre>
+              <ul>
+                <li><span class="yellow">variables</span>- tipPercent, billPreTip, billTip, receipt</li>
+                <li><span class="yellow">arithmetic operators</span>- multiplication and addition signs</li>
+                <li><span class="yellow">function</span>- calculateTip starts with a function keyword, has a name, followed by parens, followed by curly braces. Its called in var billTip</li>
+                <li><span class="yellow">parameter</span>- total; &amp; <span class="yellow">argument</span>- billPreTip</li>
+                <li><span class="yellow">return</span>- (total * tipPercent)</li>
+              </ul>
+            </section>
+
+            <section>
+              <h3>Variable Scope</h3>
+              <p>The scope of a variable is how long the computer will remember it or have access to it.</p>
+              <br />
+              <p>JavaScript has function scope, meaning that the scope changes once you are inside of a function.</p>
+            </section>
+
+            <section>
+              <h3>Global Scope</h3>
+              <p>A variable declared outside a function has a <span class="yellow">global</span> scope and can be accessed anywhere, even in a function.</p>
+<pre>
+  <code>
+    var awesomeGroup = 'Girl Develop It'; // Global scope
+    function whatIsAwesome() {
+      console.log (awesomeGroup + ' is pretty awesome.'); // Will work
+    }
+    whatIsAwesome(); // Calling the function
+  </code>
+</pre>
+            </section>
+
+            <section>
+              <h3>Local Scope</h3>
+              <p>A variable declared within a function has a <span class="yellow">local</span> scope and can only be accessed within that function.</p>
+<pre>
+  <code>
+    function whatIsAwesome() {
+      var awesomeGroup = 'Girl Develop It'; // Local scope
+      console.log ('I made a variable called awesomeGroup with a value 
+      of ' + awesomeGroup); // Will work
+    }
+    <!--on the slide, line 84 has a purple { and it's closing bracket } on line 87 is white. do they need to be the same color?-->
+    whatIsAwesome(); // Calling the function
+    console.log (awesomeGroup + ' is pretty awesome.'); // Won't work
+  </code>
+</pre>
+            </section>
+
+            <section>
+              <h3>Boolean Variables</h3>
+              <p>Boolean variables represent the logical values <span class="yellow">true</span> and <span class="yellow">false</span></p>
+<pre>
+  <code>
+    var catsAreBest = true;
+    var dogsRule = false;
+  </code>
+</pre>
+              <p>If you try to use another variable as a boolean, JavaScript will guess. The number 0, -0, an empty string '', undefined, NaN, null and false are considered false, everything else reads as true.</p>
+            </section>
+
+            <section>
+              <h3>Important vocabulary to know</h3>
+              <p><span class="yellow">NaN</span> = 'not a number';</p>
+              <p>var x = 100 / "Apple" // NaN</p>
+              <br />
+              <p><span class="yellow">null</span> = 'nothing' or 'empty' in JavaScript. It is a JavaScript object and means that no value is present. </p>
+            </section>
+
+            <section>
+              <h3>The if statement</h3>
+              <p>Use an if statement to execute a block of code if a condition is true.</p>
+<pre>
+  <code>
+    if (condition) {
+      // statements to execute if condition is true
+      // if condition is false, nothing happens
+    }
+  </code>
+</pre>
+                
+<pre>
+  <code>
+    var bananas = 5;
+    if (bananas &gt; 0) {
+      console.log('You have some bananas!');
+    }
+  </code>
+</pre>
+            </section>
+
+            <section>
+				      <h3>Comparison Operators</h3>
+              <table class="smalltext">
+                <thead>
+                  <tr>
+                    <th width="150px">Example</th>
+                    <th width="250px">Name</th>
+                    <th>Result</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>a == b</td>
+                    <td>Equal</td>
+                    <td><strong><code>TRUE</code></strong> if a is equal to b (can be different types).</td>
+                  </tr>
+                  <tr>
+                    <td>a === b</td>
+                    <td>Identical</td>
+                    <td><strong><code>TRUE</code></strong> if a is equal to b, and the same type. </td>
+                  </tr>
+                  <tr>
+                    <td>a != b</td>
+                    <td>Not equal</td>
+                    <td><strong><code>TRUE</code></strong> if a is not equal to b (can be different types).</td>
+                  </tr>
+                  <tr>
+                    <td>a !== b</td>
+                    <td>Not identical</td>
+                    <td><strong><code>TRUE</code></strong> if a is not equal to b, or they are not the same type.</td>
+                  </tr>
+                  <tr>
+                    <td>a &lt; b</td>
+                    <td>Less than</td>
+                    <td><strong><code>TRUE</code></strong> if a is strictly less than b.</td>
+                  </tr>
+                  <tr>
+                    <td>a &gt; b</td>
+                    <td>Greater than</td>
+                    <td><strong><code>TRUE</code></strong> if a is strictly greater than b.</td>
+                  </tr>
+                  <tr>
+                    <td>a &lt;= b</td>
+                    <td>Less than or equal to </td>
+                    <td><strong><code>TRUE</code></strong> if a is less than or equal to b.</td>
+                  </tr>
+                  <tr>
+                    <td>a &gt;= b</td>
+                    <td>Greater than or equal to </td>
+                    <td><strong><code>TRUE</code></strong> if a is greater than or equal to b.</td>
+                  </tr>
+                </tbody>
+              </table>
+			      </section>
+
+            <section>
+              <h3>Watch out!</h3>
+              <h4>Don't mix up =, == and ===</h4>
+              <br />
+              <p>The single equals(=) is an assignment operator</p>
+<pre><code>var x = 3;</code></pre>
+              <p>The double equals(==) checks if two statements are equal to each other, even though they do not have to have the same type.
+              </p>
+<pre><code>3 == '3'; // true, even though you are comparing a string and a number</code></pre>
+              <p>The triple equals(===) checks if two statements are equal to each other and are the same type.</p>
+<pre><code>3 === '3'; // false, because a string and a number are different types.</code></pre>
+            </section>
+
+            <section>
+				      <h3>Let's Develop It</h3>
+              <p>Make a variable called "temperature." Write some code that tells you to put on a coat if it is below 50 degrees.</p>
+			      </section>
+
+            <section>
+              <h3>The if/else statement</h3>
+              <p>Use else to provide an alternate/default set of instructions.</p>
+<pre>
+  <code>
+  var age = 28;
+  if (age &gt;= 16) {
+      console.log ('Yay, you can drive!');
+  } 
+  else {
+      console.log ('Sorry, but you have ' + (16 - age) +
+      ' years until you can drive.');
+  }
+  
+/* you don't need to add a condition to the else block because it 
+is the default, it will run if the condition is false */
+  </code>
+</pre>
+            </section>
+
+            <section>
+              <h3>The if/else if/else statement</h3>
+              <p>If you have multiple conditions, you can use else if.</p>
+<pre>
+  <code>
+    var age = 20;
+    if (age &gt;= 35) {
+        console.log('You can vote AND hold any place in government!');
+    } else if (age &gt;= 25) {
+        console.log('You can vote AND run for the Senate!');
+    } else if (age &gt;= 18) {
+        console.log('You can vote!'); // this is the condition that will run
+    } else {
+        console.log('You can\'t vote, but you can
+        still write your representatives.');
+    }
+  </code>
+</pre>
+            </section>
+
+            <section>
+				      <h3>Let's Develop It</h3>
+              <p>Modify your "wear a coat" code for these conditions:</p>
+              <ol>
+                <li>If it is less than 50 degrees, wear a coat.</li>
+                <li>If it is less than 30 degrees, wear a coat and a hat.</li>
+                <li>If it is less than 0 degrees, stay inside.</li>
+                <li>Otherwise, wear whatever you want.</li>
+              </ol>
+			      </section>
+
+            <section>
+				      <h3>Logical Operators</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <th width="200px" class="green">Example</th>
+                    <th width="150px" class="green">Name</th>
+                    <th class="green">Result</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>a &amp;&amp; b</td>
+                    <td>And</td>
+                    <td><strong><code>TRUE</code></strong> if both a and b are <strong><code>TRUE</code></strong>.</td>
+                  </tr>
+                  <tr>
+                  <td>a || b</td>
+                    <td>Or</td>
+                    <td><strong><code>TRUE</code></strong> if either a or b is <strong><code>TRUE</code></strong>.</td>
+                  </tr>
+                  <tr>
+                    <td>! a</td>
+                    <td>Not</td>
+                    <td><strong><code>TRUE</code></strong> if a is not <strong><code>TRUE</code></strong>.</td>
+                  </tr>
+                </tbody>
+              </table>
+			      </section>
+
+            <section>
+              <h3>Using logical operators</h3>
+              <p>You can use these operators to combine conditions.</p>
+<pre>
+  <code>
+    var bananas = 5;
+    if (bananas &gt;=2 &amp;&amp; bananas &lt;7) {
+        console.log ('You have a reasonable number of bananas');
+        // both statements need to be true in order for this code to execute
+    } else {
+        console.log ('Check your banana supply');
+    }
+  </code>
+</pre>
+            </section>
+
+            <section>
+				      <h3>Let's Develop It</h3>
+              <p>Add a logical operator to your what to wear program.</p>
+			      </section>
+
+            <section>
+              <h3>Switch Statement</h3>
+              <p>You can use a switch statement to select one of many code blocks to be executed.</p>
+              <h4>Syntax</h4>
+<pre>
+  <code>
+    switch(condition) {
+      case n:
+        code block;
         break;
+      case n:
+        code block;
+        break;
+      default:
+        default code block;
     }
-}
-				</code></pre>
+  </code>
+</pre>
+              <p>Like an if/else statement, each case is compared to the condition. If there is a match, the associated code is executed.</p>
             </section>
-            <section>
-				<h3>Let's Develop It</h3>
-                <p>Write a loop that gives you the 9's times table,<br /> from 9 x 1 = 9 to 9 x 12 = 108.</p>
-                <p>Finish early? Try using a loop inside a loop to write all the times tables, from 1 to 12.</p>
-			</section>
 
             <section>
-                <h3>Arrays</h3>
-                <p>Arrays are ordered lists of values.</p>
-                <pre><code>
-var arrayName = [element0, element1, ...];
-				</code></pre>
-                <p>You can put different types of data into an array.</p>
-                <pre><code>
-var rainbowColors = ['Red', 'Orange', 'Yellow', 'Green',
-'Blue', 'Indigo', 'Violet'];
-var lotteryNumbers = [33, 72, 64, 18, 17, 85];
-var myFavoriteThings = ['Broccoli', 1024, 'Sherlock'];
-				</code></pre>
+              <h3>Code Block</h3>
+              <p>A <span class="yellow">code block</span> is a block of code between two curly braces.</p>
             </section>
-            <section>
-                <h3>Array Length</h3>
-                <p>The length property tells you how many things are in an array</p>
-                <pre><code>
-var rainbowColors = ['Red', 'Orange', 'Yellow', 'Green',
-'Blue', 'Indigo', 'Violet'];
-console.log(rainbowColors.length);
-				</code></pre>
-            </section>
-            <section>
-                <h3>Using Arrays</h3>
-                <p>You can access items with "bracket notation" by using the position of the object you want. Programmers start counting at zero.</p>
-                <pre><code>
-var rainbowColors = ['Red', 'Orange', 'Yellow', 'Green',
-'Blue', 'Indigo', 'Violet'];
-var firstColor = rainbowColors[0];
-var lastColor = rainbowColors[6];
-				</code></pre>
-            </section>
-            <section>
-                <h3>Changing arrays</h3>
-                <p>You can use bracket notation to change an item in an array</p>
-                <pre><code>
-var myFavoriteThings = ['Broccoli', 1024, 'Sherlock'];
-myFavoriteThings[0] = 'Asparagus';
-                </code></pre>
-            </section>
-            <section>
-                <h3>Expanding arrays</h3>
-                <p>Arrays do not have a fixed length. You can use "push" to add something to an array.</p>
-                <pre><code>
-var myFavoriteThings = ['Broccoli', 1024, 'Sherlock'];
-myFavoriteThings.push('Dancing');
-                </code></pre>
-            </section>
-            <section>
-				<h3>Let's Develop It</h3>
-                <p>Create an array of your favorite foods. Echo a few values onto your screen.</p>
-			</section>
 
             <section>
-                <h3>Iterating through arrays</h3>
-                <p>Use a for loop to easily process each item in an array.</p>
-                <pre><code>
-var rainbowColors = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Indigo', 'Violet'];
-for (var i = 0; i &lt; rainbowColors.length; i++) {
-  console.log(rainbowColors[i]);
-}
-                </code></pre>
-            </section>
-            <section>
-				<h3>Let's Develop It</h3>
-                <p>Use a loop to make a list of all your favorite foods.</p>
-			</section>
+              <h3>Break Keyword</h3>
+              <p>Once the switch statement finds a true condition, you should exit out of the code block, using the <span class="yellow">break</span> keyword. </p>
 
-			<section>
-				<h3>Resources</h3>
-					<ul>
-						<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide" target="_blank">JavaScript Guide</a>, from the Mozilla Developers Network.</li>
-						<li><a href="http://www.codecademy.com/tracks/javascript" target="_blank">Codecademy</a>, with interactive JavaScript lessons to help you review.</li>
-					</ul>
-			</section>
+              <br />
+              <h4>Warning:</h4>
+              <p>If you don't use a 'break' keyword at the end of each code block, it will run all of the statements that follow the 'true' condition.</p>
+            </section>
+
+            <section>
+              <h3>Default Keyword</h3>
+              <p>The <span class="yellow">default</span> keyword specifies which code to run if there is no case match.</p>
+              <br />
+              <p>Default does not have to be the last condition in the code block.</p>
+              <br />
+              <h4>Remember:</h4>
+              <p>If default is not the last case in the switch block, remember to end it with a break.</p>
+            </section>
+
+            <section>
+              <h3>Code Fall-Through</h3>
+              <p>You can use a switch statement if you want multiple cases to use the same code.</p>
+<pre><code>    var whatDayIsIt = prompt('What day of the week is it?');
+    var text;
+    switch(whatDayIsIt) {
+      case 'Monday':
+      case 'Tuesday':
+      case 'Wednesday':
+      default: 
+        text = 'I wish it was the weekeend.';
+        break;
+      case 'Thursday':
+      case 'Friday':
+        text = 'The weekend is so close that I can taste it!'; break;
+      case 'Saturday':
+      case 'Sunday':
+        text = 'Weekends are the best.'; break;
+    }
+    console.log(text);
+  </code>
+</pre>
+            </section>
+
+            <section>
+              <h3>Prompt</h3>
+              <p>A prompt lets you ask a user for their input.</p>
+              <br />
+              <p>Make sure to save your prompt to a variable so that you can access the user's response.</p>
+<pre>
+  <code>
+var name = prompt('What is your name?');
+document.write('Hi, ' + name + '! I hope you are having a great day!');
+  </code>
+</pre>
+            </section>
+
+            <section>
+              <h3>Let's Develop It</h3>
+              <p>Change your "wear a coat" code into a switch statement with a prompt:</p>
+              <ol>
+                <li>If it is less than 50 degrees, wear a coat.</li>
+                <li>If it is less than 30 degrees, wear a coat and a hat.</li>
+                <li>If it is less than 0 degrees, stay inside.</li>
+                <li>Otherwise, wear whatever you want.</li>
+              </ol>
+            </section>
+
+            <section>
+              <h3>Loops</h3>
+              <p>Loops will execute a block of code a number of times.</p>
+              <br />
+              <p>They will run the same code over and over again, and output a different value.</p>
+            </section>
+
+            <section>
+              <h3>Different Kinds of Loops</h3>
+              <ul>
+                <li><span class="yellow">for </span>- loops through a block of code until the specified condition is false.</li>
+                <li><span class="yellow">for/in </span>- loops through the properties of an object. (We will talk about objects next week).</li>
+                <li><span class="yellow">while </span>- loops through a block of code while a specific condition is true.</li>
+                <li><span class="yellow">do/while </span>- loops through a block of code while a specific condition is true, but it will always go through the loop at least once.</li>
+              </ul>
+            </section>
+
+            <section>
+              <h3>For loops</h3>
+              <p>This is the often the loop that you will want to use.</p>
+<pre>
+  <code>
+    //will count 1 to 10
+    for (var i = 1; i &lt;= 10; i++) {
+        console.log (i);
+    }
+  </code>
+</pre>
+              <p>A for loop is the most common type of loop.</p>
+              <ul>
+                <li><span class="yellow">Statement 1:</span> sets a variable before the loop starts.</li>
+                <li><span class="yellow">Statement 2:</span> defines the condition for the loop.</li>
+                <li><span class="yellow">Statement 3:</span> is executed each time after the code block ends.</li>
+              </ul>
+            </section>
+
+            <section>
+              <h3>Logical Operators that you will often see in loops</h3>
+              <br />
+              <table>
+                <thead>
+                  <tr>
+                    <th class="green">Example</th>
+                    <th class="green">Name</th>
+                    <th class="green">Result</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>i++</td>
+                    <td>Increment</td>
+                    <td>Adds 1 to i.</td>
+                  </tr>
+                  <tr>
+                    <td>i--</td>
+                    <td>Decrement</td>
+                    <td>Subtracts 1 from i.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+
+            <section>
+              <h3>x++</h3>
+<pre>
+  <code>
+    var x = 9;
+    var y = x++; 
+    // y = 9; x = 10; because the '++' happens after the assignment
+    var z = ++x; // z = 10; x = 10;
+  </code>
+</pre>
+              <p>If you write the addition sign first, you will change both variables.</p>
+            </section>
+
+            <section>
+              <h3>Infinite Loops</h3>
+              <br />
+              <h4>Beware of these!</h4>
+              <p>Make sure that the condition will be false at some point, or your loop will go on forever...</p>
+            </section>
+
+            <section>
+              <h3>Loops and logic</h3>
+              <p>You can add other statements or logical operators inside the loops.</p>
+<pre>
+  <code>
+    //Count from 1 to 50
+    for (var i = 1; i &lt;= 50; i++) {
+        console.log (i);
+        //Says 'Buzz' after multiples of three
+        if (i % 3 == 0) {
+            console.log (' Buzz');
+        }
+        //Says 'Bang' after multiples of five
+        if (i % 5 == 0) {
+            console.log (' Bang');
+        }
+    }
+  </code>
+</pre>
+            </section>
+
+            <section>
+              <h3>Using Break in a Loop</h3>
+<pre>
+  <code>
+    //Count from 100 to 200
+    for (var i = 100; i &lt;= 200; i++) {
+        console.log('Testing ' + i);
+        //Stop at the first multiple of 7
+        if (i % 7 == 0) {
+            console.log('Found it! ' + i);
+            break;
+        }
+    }
+  </code>
+</pre>
+            </section>
+
+            <section>
+              <h3>While Loop</h3>
+              <p>While will repeat the same code over and over as long as the specified condition is true.</p>
+<pre>
+  <code>
+    var bottlesOfBeer = 99;
+    while (bottlesOfBeer &gt;= 1) {
+        console.log(bottlesOfBeer + ' bottles of beer on the wall');
+        bottlesOfBeer--;
+        // could also write this bottlesOfBeer -= 1; 
+        // or bottlesOfBeer = bottlesOfBeer - 1;
+    }
+  </code>
+</pre>
+            </section>
+
+            <section>
+              <h3>Do/While Loop</h3>
+              <p>The do/while loop is a variant of the while loop. The code block will execute once, even if the condition is false, because the code block is executed before the condition is tested.</p>
+<pre>
+  <code>
+    var text = "";
+    var i = 0;
+    do {
+      text += 'The number is ' + i + '&lt;br /&gt;';
+      i++;
+    } while (i %lt; 10);
+    document.write(text);
+  </code>
+</pre>
+              <p>Don't forget to increase the variable, otherwise the loop will never end.</p>
+            </section>
+
+            <section>
+              <h3>Comparing for and while</h3>
+              <p>The two loops are very similar.</p>
+<pre>
+  <code>
+    for(var i = 0; i &lt; 12; i++) {
+      console.log(i);
+    }
+  </code>
+</pre>
+<pre>
+  <code>
+    var i = 0;
+    while(i &lt; 12) {
+      console.log(i);
+      i++;
+    }
+  </code>
+</pre>
+              <p>The difference is that the while loop omits statement 1 and statement 3.</p>
+            </section>
+
+            <section>
+				      <h3>Let's Develop It</h3>
+              <br />
+              <p>Write a loop that gives you the 9's times table,<br /> from 9 x 1 = 9 to 9 x 12 = 108.</p>
+              <p>Finish early? Try using a loop inside a loop to write all the times tables, from 1 to 12.</p>
+			      </section>
+
+            <section>
+              <h3>Arrays</h3>
+              <p>Arrays are ordered lists of values.</p>
+<pre>
+  <code>
+    var arrayName = [element0, element1, ...];
+	</code>
+</pre>
+              <p>You can put different types of data into an array.</p>
+<pre>
+  <code>
+    var rainbowColors = ['Red', 'Orange', 'Yellow', 'Green',
+    'Blue', 'Indigo', 'Violet']; // strings
+    var lotteryNumbers = [33, 72, 64, 18, 17, 85]; // numbers
+    var myFavoriteThings = ['Broccoli', 1024, 'Sherlock']; // mixed
+  </code>
+</pre>
+            </section>
+
+            <section>
+              <h3>How to create an array</h3>
+              <br />
+              <ul>
+                <li>Declare a variable</li>
+                <li>Assign the variable square brackets</li>
+                <li>Inside of the square brackets, add your list, separated by commas.</li>
+                <li>Make sure to end it with a semi-colon</li>
+              </ul>
+<pre>
+  <code>
+    var fruit = ['Kiwi', 'Strawberry', 'Mango'];
+  </code>
+</pre>
+            </section>
+
+            <section>
+              <h3>Zero Index</h3>
+              <br />
+              <p>Arrays have a zero index, which means that the first item in an array is at index 0. The second item is index 1. And so on.</p>
+<pre>
+  <code>
+    var fruit = ['Kiwi', 'Strawberry', 'Mango'];
+    // 'Kiwi' is at index 0;
+    // 'Strawberry' is at index 1;
+    // 'Mango' is at index 2;
+  </code>
+</pre>
+            </section>
+
+            <section>
+              <h3>Array Length</h3>
+              <p>The length property tells you how many items are in an array</p>
+<pre>
+  <code>
+    var rainbowColors = ['Red', 'Orange', 'Yellow', 'Green',
+    'Blue', 'Indigo', 'Violet'];
+    console.log(rainbowColors.length); // output 8;
+  </code>
+</pre>
+              <p>The length property is always one more than the highest array index, as the length count starts with 1 instead of 0.</p>
+            </section>
+
+            <section>
+              <h3>Using Arrays</h3>
+              <p>You can access items with <span class="yellow">bracket notation</span> by using the position of the object you want. Programmers start counting at zero.</p>
+<pre>
+  <code>
+    var rainbowColors = ['Red', 'Orange', 'Yellow', 'Green',
+    'Blue', 'Indigo', 'Violet'];
+    var firstColor = rainbowColors[0]; // Red
+    var lastColor = rainbowColors[6];  // Violet
+  </code>
+</pre>
+            </section>
+
+            <section>
+              <h3>Changing arrays</h3>
+              <p>You can use bracket notation to change an item in an array</p>
+<pre>
+  <code>
+    var myFavoriteThings = ['Broccoli', 1024, 'Sherlock'];
+    myFavoriteThings[0] = 'Asparagus'; 
+    // ['Asparagus', 1024, 'Sherlock']
+  </code>
+</pre>
+            </section>
+
+            <section>
+              <h3>Expanding arrays</h3>
+              <p>Arrays do not have a fixed length. You can use "push" to add something to the end of an array.</p>
+<pre>
+  <code>
+    var myFavoriteThings = ['Broccoli', 1024, 'Sherlock'];
+    myFavoriteThings.push('Dancing'); 
+    // ['Broccoli', 1024, 'Sherlock', 'Dancing']
+  </code>
+</pre>
+            </section>
+
+            <section>
+              <h3>Decreasing arrays</h3>
+              <p>You can use "pop" to pop off the last element in an array.</p>
+<pre>
+  <code>
+    var myFavoriteThings = ['Broccoli', 1024, 'Sherlock', 'Dancing'];
+    myFavoriteThings.pop(); 
+    // ['Broccoli', 1024, 'Sherlock']
+  </code>
+</pre>
+            </section>
+
+            <section>
+              <h3>Shifting arrays</h3>
+              <p>You can use "shift" to remove the first element in an array, and shift all of the other elements up one place.</p>
+<pre>
+  <code>
+    var myFavoriteThings = ['Broccoli', 1024, 'Sherlock', 'Dancing'];
+    myFavoriteThings.shift(); 
+    // [1024, 'Sherlock', 'Dancing']
+  </code>
+</pre>
+            </section>
+
+            <section>
+              <h3>unshifting arrays</h3>
+              <p>You can use "unshift" to add an element to the beginning of an array, and shift all of the other elements back one place.</p>
+<pre>
+  <code>
+    var myFavoriteThings = ['Broccoli', 1024, 'Sherlock', 'Dancing'];
+    myFavoriteThings.unshift('Kiwi'); 
+    // ['Kiwi', 'Broccoli', 1024, 'Sherlock', 'Dancing']
+  </code>
+</pre>
+            </section>
+
+            <section>
+				      <h3>Let's Develop It</h3>
+              <p>Create an array of your favorite foods. Echo a few values onto your screen.</p>
+			      </section>
+
+            <section>
+              <h3>Iterating through arrays</h3>
+              <p>Use a for loop to easily process each item in an array.</p>
+<pre>
+  <code>
+    var rainbowColors = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 
+    'Indigo', 'Violet'];
+
+    for (var i = 0; i &lt; rainbowColors.length; i++) {
+      console.log(rainbowColors[i]);
+    }
+  </code>
+</pre>
+            </section>
+
+            <section>
+				      <h3>Let's Develop It</h3>
+              <p>Use a loop to make a list of all your favorite foods.</p>
+			      </section>
+
+			      <section>
+    				  <h3>Resources</h3>
+    					<ul>
+    						<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide" target="_blank">JavaScript Guide</a>, from the Mozilla Developers Network.</li>
+    						<li><a href="http://www.codecademy.com/tracks/javascript" target="_blank">Codecademy</a>, with interactive JavaScript lessons to help you review.</li>
+    					</ul>
+			      </section>
+
+            <section>
+              <h3>Next Class</h3>
+              <ul>
+                <li>Objects</li>
+                <li>Object Methods</li>
+                <li>Anatomy of a Website</li>
+                <li>IDs vs. Classes</li>
+                <li>The DOM</li>
+                <li>Traversing and Altering the DOM</li>
+              </ul>
+              <br />
+              <br />
+              <h4>Don't forget the Code + Coffee at Octane on Saturday from 10-11:30.</h4>
+            </section>
 
 			</div><!-- Close .slides -->
   		<footer>
