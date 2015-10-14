@@ -44,10 +44,16 @@
               <p>bathroom password: 532</p>
             </section>
 
+            <section>
+              <h3>Please download the slides for this class</h3>
+              <br />
+              <p>We are going to need some code from today's slides for this lesson.</p>
+              <a href="http://marenwoodruff.github.io/gdi-intro-js">http://marenwoodruff.github.io/gdi-intro-js</a>
+            </section>
 
             <section>
       			  <h3>Objects</h3>
-      			  <p>Objects let us store a collection of properties.</p>
+      			  <p>Objects let us store a collection of properties in name: value pairs.</p>
 <pre>
   <code>
     var objectName = {
@@ -61,22 +67,26 @@
 <pre>
   <code>
     var aboutMe = {
-      hometown: 'Atlanta, GA',
-      hair: 'Auburn',
-      likes: ['knitting', 'code'],
-      birthday: {month: 10, day: 17}
+      hometown: 'Los Angeles, CA',
+      hair: 'Dark Brown',
+      likes: ['playing guitar', 'code'],
+      birthday: {
+        month: 4, 
+        day: 3
+      }
     };
 </code>
   </pre>
 			      </section>
+
             <section>
 			        <h3>Accessing Objects</h3>
 			        <p>You can retrieve values using "dot notation"</p>
 <pre>
   <code>
     var aboutMe = {
-      hometown: 'Atlanta, GA',
-      hair: 'Auburn'
+      hometown: 'Los Angeles, CA',
+      hair: 'Dark Brown'
     };
     var myHometown = aboutMe.hometown;
   </code>
@@ -86,32 +96,28 @@
   <code>
     var myHair = aboutMe['hair'];
   </code>
-</pre>
+</pre>  
+              <p>retrieve values with objectName.name or objectName['name']</p>
 			      </section>
             
             <section>
 			        <h3>Changing Objects</h3>
 			        <p>You can use dot or bracket notation to change properties</p>
 <pre>
-  <code>
-    var aboutMe = {
-      hometown: 'Atlanta, GA',
-      hair: 'Auburn'
-    };
-    aboutMe.hair = 'blue';
-  </code>
+  <code>var aboutMe = {
+  hometown: 'Los Angeles, CA',
+  hair: 'Dark Brown'
+};
+aboutMe.hair = 'blue'; // will change my hair color to 'blue'</code>
 </pre>
               <p>Add new properties</p>
 <pre>
-  <code>
-    aboutMe.gender = 'female';
-  </code>
+  <code>aboutMe.gender = 'female'; 
+// will add a gender:'female' the name:value pair to the object aboutMe</code>
 </pre>
               <p>Or delete them</p>
 <pre>
-  <code>
-    delete aboutMe.gender;
-  </code>
+  <code>delete aboutMe.gender; // not used</code>
 </pre>
       			</section>
 
@@ -119,18 +125,23 @@
       			  <h3>Arrays of Objects</h3>
       			  <p>Since arrays can hold any data type, they can also hold objects</p>
 <pre>
-  <code>
-    var myCats = [
-      {name: 'Lizzie',
-       age: 18},
-      {name: 'Daemon',
-       age: 1}
-    ];
+  <code>var myCats = [
+  {
+    name: 'Lizzie',
+    age: 18
+  },
+  {
+    name: 'Daemon',
+    age: 1
+  }
+];
 
-    for (var i = 0; i &lt; myCats.length; i++) {
-      var myCat = myCats[i];
-      console.log(myCat.name + ' is ' + myCat.age + ' years old.');
-    }
+for (var i = 0; i &lt; myCats.length; i++) {
+  var myCat = myCats[i];
+  console.log(myCat.name + ' is ' + myCat.age + ' years old.');
+  // will output Lizzie is 18 years old.
+  // output Daemon is 1 years old.
+}
   </code>
 </pre>
 			      </section>
@@ -139,29 +150,72 @@
       			  <h3>Arrays of Objects</h3>
       			  <p>Just like other data types, objects can be passed into functions:</p>
 <pre>
-  <code>
-    var lizzieTheCat = {
-      age: 18,
-      furColor: 'grey',
-      likes: ['catnip', 'milk'],
-      birthday: {month: 7, day: 17, year: 1996}
-    }
+  <code>var lizzieTheCat = {
+  age: 18,
+  furColor: 'grey',
+  likes: ['catnip', 'milk'], // an array
+  birthday: {month: 7, day: 17, year: 1996} // an object
+};
 
-    function describeCat(cat) {
-      console.log('This cat is ' + cat.age + ' years old with ' + cat.furColor + ' fur.');
-    }
+function describeCat(cat) {
+  console.log('This cat is ' + cat.age + ' years old with ' + 
+  cat.furColor + ' fur.');
+  // will output: This cat is 18 years old with grey fur.
+}
 
-    describeCat(lizzieTheCat);
+describeCat(lizzieTheCat); 
+// calls the function with the argument as the object LizzieTheCat
   </code>
 </pre>
 			      </section>
 
             <section>
 				      <h3>Let's Develop It</h3>
-              <p>Create an object to hold information on your favorite recipe. It should have properties for recipeTitle (a string), servings (a number), and ingredients (an array of strings).</p>
+              <p>Create an object to hold information about your favorite recipe. It should have properties for recipeTitle (a string), servings (a number), and ingredients (an array of strings).</p>
+              <br />
               <p>Try displaying some information about your recipe.</p>
               <p>Bonus: Create a loop to list all the ingredients.</p>
 			      </section>
+
+            <section>
+              <h3>Create a New Folder for Class 3</h3>
+              <p>Let's create a new folder in our gdi folder called 'class3' with a file called 'index.html' and a 'main.js file.</p>
+<pre>
+  <code>
+    &lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+      &lt;head&gt;
+        &lt;title&gt;Test Page&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+        &lt;p&gt;This is my awesome JavaScript code.&lt;/p&gt;
+        &lt;script src="main.js type="text/javascript"&gt;&lt;/script&gt;
+      &lt;/body&gt;
+    &lt;/html&gt;
+  </code>
+</pre>
+            </section>
+
+            <section>
+              <h3>Answer</h3>
+<pre>
+  <code>var recipe = {
+  recipeTitle: 'Oatmeal Marble Chocolate Chip Cookies',
+  servings: 24, //depends on whether you eat the cookie dough or share
+  ingredients: ['oatmeal', 'chocolate chips', 'baking chocolate', 'butter', 'flour', 'brown sugar', 'white sugar', 'eggs', 'salt', 'vanilla', 'baking soda', 'baking powder']
+}
+function recipeIngredients(dish){
+  console.log('title: ' + dish.recipeTitle); // output the recipe title
+  console.log('servings: ' + dish.servings); // output the servings
+  console.log('ingredients: ');
+  for(var i = 0; i &lt; dish.ingredients.length; i++) {
+    console.log(dish.ingredients[i]); //loop and output the ingredients
+  }
+}
+recipeIngredients(recipe); 
+// passes the recipe object into the recipeIngredients function</code>
+</pre>
+            </section>
 
             <section>
               <h3>Object methods</h3>
@@ -172,7 +226,7 @@
       age: 18,
       furColor: 'grey',
       meow: function() {
-        console.log('meowww');
+        console.log('meowww'); 
       },
       eat: function(food) {
         console.log('Yum, I love ' + food);
@@ -183,14 +237,15 @@
               <p>Call object methods using dot notation.</p>
 <pre>
   <code>
-    lizzieTheCat.meow();
-    lizzieTheCat.eat('brown mushy stuff');
+    lizzieTheCat.meow(); // output will console.log: meoww
+    lizzieTheCat.eat('cuban sandwiches'); 
+    // output will console.log: Yum, I love cuban sandwiches
   </code>
 </pre>
             </section>
 
             <section>
-              <h3>Built-in methods</h3>
+              <h3>Built-in objects</h3>
               <p>JS provides several built-in objects:</p>
               <ul>
                 <li><code><a target="_blank" href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array">Array</a></code></li>
@@ -201,6 +256,10 @@
                 <li><code><a target="_blank" href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Date">Date</a></code></li>
                 <li><code><a target="_blank" href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Math">Math</a></code></li>
               </ul>
+              <br />
+              <br />
+              <h4>Best Practice</h4>
+              <p>Do not use Boolean, Number or String as objects.  Use them as their intended types.</p>
             </section>
 
       			<section>
@@ -209,18 +268,50 @@
       			  <div><span class = "blue">+ HTML: </span>Structure</div>
       			  <div><span class = "blue">+ CSS: </span>Presentation</div>
       			  <div class = "blue">= Your Website</div>
+              <br />
       			  <p>A website is a way to present your content to the world, using HTML and CSS to present that content &amp; make it look good.</p>
+              <br />
+              <p>You use JavaScript to make your website interactive.</p>
       			</section>
 
             <section>
       			  <h3>IDs vs. Classes</h3>
       				<div class = "left-align">
-      				  <span class = "yellow">ID</span> -- Should only apply to one element on a webpage. For instance, a webpage only has one footer.
-      				  <p>The "#" is how you tell CSS "this is an id."</p>
+      				  <p><span class = "yellow">ID</span> -- Like your driver's license, you should only apply an ID to one element on a webpage. For instance, a webpage only has one header or one footer.</p>
+                <br />
+      				  <p>Use "#" to tell CSS "this is an id."</p>
+<pre>
+  <code>
+    &lt;h1 id='header'&gt;We write the best JavaScript code!&lt;/h1&gt;
+
+    // in your main.css file, you can change the styles with: 
+    #header {
+      color: #660000;
+      font-size: 3em;
+    }
+  </code>
+</pre>
       				</div>
+            </section>
+
+            <section>
       				<div class = "left-align">
-      				  <span class = "yellow">Class</span> -- Lots of elements can have the same class. For instance, there can be many warnings on one webpage.
+      				  <p><span class = "yellow">Class</span> -- As you can take many classes in order to learn how to program, multiple elements can have the same class. For instance, there can be many warnings on one webpage.</p>
+                <br />
       				  <p>The "." is how you tell CSS "this is a class name."</p>
+<pre>
+  <code>
+  &lt;p class='warning'&gt;
+    This product is for puppies that are older than 1.
+  &lt;/p&gt;
+
+  // in your main.css file, you can change the styles with: 
+  .warning {
+    color: #FF0000;
+    font-weight: bold;
+  }
+  </code>
+</pre>
       				</div>
       			</section>
 
@@ -228,6 +319,9 @@
             <section>
               <h3>The DOM Tree</h3>
               <p>We model the nested structure of an HTML page with the DOM (Document Object Model) Tree. The browser makes a "map" of all the elements on a page.</p>
+              <br />
+              <p>You can think of the DOM like a family tree.  It shows how each child node in a website is connected to its parent node.</p>
+              <p>A <span class="yellow">node</span> is any element on a page, beginning with the html tag (the 'oldest' parent).</p>
             </section>
 
             <section>
@@ -263,7 +357,9 @@
 
             <section>
               <h3>DOM Access</h3>
-              <p>Your browser automatically builds a Document Object to store the DOM of a page. To change a page:</p>
+              <p>Your browser automatically builds a Document Object to store the DOM of a page.</p>
+              <br />
+              <p>To change what displays on a page:</p>
               <ol>
                 <li>Find the DOM node and store it in a variable</li>
                 <li>Use methods to manipulate the node</li>
@@ -272,49 +368,43 @@
 
             <section>
               <h3>DOM Access: By Id</h3>
-              <p>You can find nodes by id using the method:</p>
+              <p>You can find nodes by the id using this method:</p>
 <pre>
-  <code>
-    document.getElementById(id);
-  </code>
+  <code>document.getElementById('id');</code>
 </pre>
-              <p>To find:</p>
+              <p>To find the image with the id of 'kittenPic':</p>
 <pre>
-  <code>
-    &lt;img id="kittenPic" src="http://placekitten.com/200/300" alt="cat"/&gt;
-  </code>
+  <code>&lt;img id="kittenPic" src="http://placekitten.com/200/300" alt="cat"/&gt;</code>
 </pre>
               <p>We would use:</p>
 <pre>
-  <code>
-    var imgKitten = document.getElementById('kittenPic');
-  </code>
+  <code>var imgKitten = document.getElementById('kittenPic');
+// assigns the img to imgKitten
+// notice that 'Element' is singular, and the 'd' in 'Id' is lowercase
+// as there can only be one 'kittenPic' ID on a page</code>
 </pre>
             </section>
 
             <section>
               <h3>DOM Access: By Tag Name</h3>
-              <p>You can find certain types of HTML elements using this method:</p>
+              <p>You can find HTML elements on a page using this method:</p>
 <pre>
-  <code>
-    document.getElementsByTagName(tagName);
-  </code>
+  <code>document.getElementsByTagName(tagName);</code>
 </pre>
-              <p>To find:</p>
+              <p>To find the li's on the page:</p>
 <pre>
-  <code>
-    &lt;li&gt;Daisy&lt;/li&gt;
-    &lt;li&gt;Tulip&lt;/li&gt;
-  </code>
+  <code>&lt;ul&gt;
+  &lt;li&gt;Daisy&lt;/li&gt;
+  &lt;li&gt;Tulip&lt;/li&gt;
+&lt;/ul&gt;</code>
 </pre>
               <p>We would use:</p>
 <pre>
-  <code>
-    var listItems = document.getElementsByTagName('li');
-    for (var i = 0; i &lt; listItems.length; i++) {
-      var listItem = listItems[i];
-    }
-  </code>
+  <code>var listItems = document.getElementsByTagName('li');
+for (var i = 0; i &lt; listItems.length; i++) {
+  var listItem = listItems[i];
+} // notice that 'ElementsByTagName' is plural  
+// as there can be multiple elements with the same tag on a page</code>
 </pre>
             </section>
 
@@ -334,79 +424,78 @@
     document.querySelectorAll(cssQuery);
   </code>
 </pre>
+              <p>*** These are not used very often because they are not accessible/usable on every browser.</p>
             </section>
 
             <section>
               <h3>getElement vs. getElements</h3>
-              <p>Any method that starts with "getElement" will return a <span class = "blue">single</span> node.</p>
+              <p>Any method that starts with "getElement" will return a <span class = "yellow">single</span> node.</p>
 <pre>
-  <code>
-    document.getElementById('uniqueID'); //returns a single node
-  </code>
+  <code>document.getElementById('uniqueID'); //returns a single node</code>
 </pre>
-              <p>Any method that starts with "getElements" will return a <span class = "blue">array</span> of nodes. To modify a single node, you will need to use bracket notation to select the correct one.</p>
+              <p>Any method that starts with "getElements" will return an <span class = "yellow">array</span> of nodes. To modify a single node, you will need to use bracket notation to select the correct one.</p>
 <pre>
-  <code>
-    document.getElementsByTagName('p'); //returns multiple nodes
-    var specficParagraph = document.getElementsByTagName('p')[2];
-  </code>
+  <code>document.getElementsByTagName('p'); //returns multiple nodes
+// to select a single paragraph use the tag name ('p') 
+// followed by the index number in a bracket
+var specficParagraph = document.getElementsByTagName('p')[2];
+// assigns the third paragraph to the variable specificParagraph</code>
 </pre>
             </section>
 
             <section>
               <h3>DOM Nodes: Attributes</h3>
-              <p>You can access and change attributes of DOM nodes using dot notation.</p>
+              <p>You can access and change attributes of DOM nodes using <span class="yellow">dot notation</span>.</p>
               <p>To change this element:</p>
 <pre>
-  <code>
-    &lt;img id="kittenPic" src="http://placekitten.com/200/300" alt="cat"/&gt;
-  </code>
+  <code>&lt;img id="kittenPic" src="http://placekitten.com/200/300" alt="cat"/&gt;</code>
 </pre>
               <p>We could change the src attribute this way:</p>
 <pre>
-  <code>
-    var imgKitten = document.getElementById('kittenPic');
-    var oldSrc = imgKitten.src;
-    imgKitten.src = 'http://placekitten.com/100/500';
-  </code>
+  <code>// assigns #kittenPic to the var imgKitten
+// this allows you to access the image attributes via dot notation
+var imgKitten = document.getElementById('kittenPic');
+// assigns the old kittenPic src to the variable oldSrc
+var oldSrc = imgKitten.src;
+// changes the KittenPic src to a new url
+imgKitten.src = 'http://placekitten.com/100/500';</code>
 </pre>
             </section>
 
             <section>
               <h3>DOM Nodes: Getting and Setting Attributes</h3>
-              <p>You can also use <code>getAttribute/setAttribute:</code></p>
+              <p>You can also use <span class="yellow">getAttribute/setAttribute</span> to get and change the attributes of DOM nodes:</p>
 <pre>
-  <code>
-    &lt;img id="kittenPic" src="http://placekitten.com/200/300" alt="cat"/&gt;
-  </code>
+  <code>&lt;img id="kittenPic" src="http://placekitten.com/200/300" alt="cat"/&gt;</code>
 </pre>
-              <p>We could change the src attribute this way:</p>
+              <p>We would change the src attribute this way:</p>
 <pre>
-  <code>
-    var imgKitten = document.getElementById('kittenPic');
-    var oldSrc = imgKitten.getAttribute('src');
-    imgKitten.setAttribute('src', 'http://placekitten.com/100/500');
-  </code>
+  <code>// assigns #kittenPic to the variable imgKitten
+var imgKitten = document.getElementById('kittenPic');
+// assigns the kittenPic src to the variable oldSrc
+var oldSrc = imgKitten.getAttribute('src');
+// changes the KittenPic src to a new url
+imgKitten.setAttribute('src', 'http://placekitten.com/100/500');</code>
 </pre>
             </section>
 
             <section>
               <h3>DOM Nodes: Styles</h3>
-              <p>You can change page css using <code>style</code></p>
-              <p>To make this CSS:</p>
+              <p>You can change the css on a page using the <span class="yellow">style</span> tag</p>
+              <p>On a CSS stylesheet, you can change the CSS this way:</p>
 <pre>
-  <code>
-    body {
-      color: red;
-    }
-  </code>
+  <code>body { color: red; } // changes the text color to red</code>
 </pre>
-              <p>Use this JavaScript:</p>
+              <p>The CSS link tag:</p>
 <pre>
-  <code>
-    var pageNode = document.getElementsByTagName('body')[0];
-    pageNode.style.color = 'red';
-  </code>
+  <code>&lt;head&gt;
+    &lt;link rel="stylesheet" type="text/css" href="main.css"&gt;
+&lt;/head&gt;</code>
+</pre>
+              <p>In JavaScript, you would use the <span class="yellow">style</span> tag:</p>
+<pre>
+  <code>var pageNode = document.getElementsByTagName('body')[0];
+pageNode.style.color = 'red';</code>
 </pre>
             </section>
 
@@ -425,7 +514,7 @@
               <p>Use this JavaScript:</p>
 <pre>
   <code>
-    var pageNode = document.getElementsByTagName('body')[0]
+    var pageNode = document.getElementsByTagName('body')[0];
     pageNode.style.backgroundColor = 'pink';
     pageNode.style.paddingTop = '10px';
   </code>
@@ -435,24 +524,49 @@
             <section>
 				      <h3>Let's Develop It</h3>
               <p>Create a simple HTML page or <a href="files/class3.zip">use this sample code.</a></p>
+              <br />
               <p>Isolate a node (an element on the page) and change an attribute or add a new style.</p>
 			      </section>
 
             <section>
-              <h3>DOM innerHTML</h3>
-              <p>Each DOM node has an <code>innerHTML</code> property with the HTML of all its children. You can use the property to view or change the HTML of a node.</p>
-              <p>For example, you can overwrite the entire body:</p>
+              <h3>Answer</h3>
+              <p>Add this to your myscript.js page</p> 
+              <p>It will change the resultsBox, body text alignment and title to a larger font</p>
 <pre>
   <code>
-    var pageNode = document.getElementsByTagName('body')[0];
-    pageNode.innerHTML = '&lt;h1&gt;Oh Noes!&lt;/h1&gt; &lt;p&gt;I just changed the whole page!&lt;/p&gt;'
+    // change the resultsBox to be smaller and a darker blue
+    var underline = document.getElementById('resultsBox');
+    underline.style.padding = '2px';
+    underline.style.backgroundColor = '#006666';
+
+    // align the text and picture to the center
+    var alignCenter = document.getElementsByTagName('body')[0];
+    alignCenter.style.textAlign = 'center';
+
+    // make the title font-size larger
+    var titleTag = document.getElementsByTagName('h1')[0];
+    titleTag.style.fontSize = '3em';
   </code>
 </pre>
-              <p>Or just add some new content to the end:</p>
+            </section>
+
+            <section>
+              <h3>DOM innerHTML</h3>
+              <p>Each DOM node has an <span class="yellow">innerHTML</span> property with the HTML of all its children. You can use the property to view or change the HTML of a node.</p>
+              <p>For example, you can overwrite the entire body:</p>
 <pre>
-  <code>
-    pageNode.innerHTML += '...just adding this bit at the end of the page.';
-  </code>
+  <code>var pageNode = document.getElementsByTagName('body')[0];
+pageNode.innerHTML = 
+'&lt;h1&gt;Oh Noes!&lt;/h1&gt; &lt;p&gt;I just changed the whole page!&lt;/p&gt;'
+// the '=' assigns the new content to the page
+// this will replace all of the other content</code>
+</pre>
+              <p>Or just add new content to the end of a page:</p>
+<pre>
+  <code>pageNode.innerHTML += 
+    '&lt;p&gt;...just adding this bit to the end of the page.&lt;/p&gt;';
+// use the '+=' assignment to add content to the page
+// this will just add, not replace the content on a page</code>
 </pre>
             </section>
 
@@ -468,7 +582,9 @@
               <p>We can select the node and modify it:</p>
 <pre>
   <code>
+    // assigns the #warning paragraph to the variable warningParagraph
     var warningParagraph = document.getElementById('warning');
+    // will put 'Danger Will Robinson' into the #warning paragraph
     warningParagraph.innerHTML = 'Danger Will Robinson!';
   </code>
 </pre>
@@ -479,9 +595,10 @@
               <p>The <code>document</code> object also provides ways to create nodes from scratch:</p>
 <pre>
   <code>
-    document.createElement(tagName);
-    document.createTextNode(text);
-    document.appendChild();
+    document.createElement('tagName'); // will create a new element
+    document.createTextNode('text'); // will create new text
+    // will append the child to the parent
+    document.appendChild(childToAppend); 
   </code>
 </pre>
             </section>
@@ -489,19 +606,28 @@
             <section>
               <h3>Creating New Nodes: Sample Code</h3>
 <pre>
-  <code>
-    var pageNode = document.getElementsByTagName('body')[0];
+  <code>// assigns the body to the variable pageNode
+var pageNode = document.getElementsByTagName('body')[0];
 
-    var newImg = document.createElement('img');
-    newImg.src = 'http://placekitten.com/400/300';
-    newImg.style.border = '1px solid black';
-    pageNode.appendChild(newImg);
+// creates a new image elemnt
+var newImg = document.createElement('img');
+// assigns this src to the new image
+newImg.src = 'http://placekitten.com/400/300';
+// adds a border style to the image
+newImg.style.border = '1px solid black';
+// appends the new image to the body via the variable pageNode
+pageNode.appendChild(newImg);</code>
+</pre>
 
-    var newParagraph = document.createElement('p');
-    var paragraphText = document.createTextNode('Squee!');
-    newParagraph.appendChild(paragraphText);
-    pageNode.appendChild(newParagraph);
-  </code>
+<pre>
+  <code>// creates a new paragraph element and assigns it to var newParagraph
+var newParagraph = document.createElement('p');
+// creates the text 'Squee!' and assigns it to var paragraphText
+var paragraphText = document.createTextNode('Squee!');
+// appends the paragraphText to the var newParagraph
+newParagraph.appendChild(paragraphText);
+// appends the new paragraph to the body via the variable pageNode
+pageNode.appendChild(newParagraph);</code>
 </pre>
             </section>
 
@@ -509,6 +635,23 @@
 				      <h3>Let's Develop It</h3>
               <p>Create a new paragraph element and add it to a div on your page.</p>
 			      </section>
+
+            <section>
+              <h3>Answer</h3>
+              <p>in your main.js page, add this code</p>
+<pre>
+  <code>// assigns the first div on the page to the var newDiv
+var newDiv = document.getElementsByTagName('div')[0];
+// creates a new paragraph element &amp; assigns it to the var newParagraph
+var newParagraph = document.createElement('p');
+// creates a new text node and assigns it to the var newParagraphText
+var newParagraphText = document.createTextNode('I heart this class.');
+// appends/adds the newParagraphText to the var newParagraph
+newParagraph.appendChild(newParagraphText);
+// appends/adds the newParagraph to the first div on the page
+newDiv.appendChild(newParagraph);</code>
+</pre>
+            </section>
 
       			<section>
       				<h3>Resources</h3>
@@ -524,6 +667,19 @@
                 <li><a href="http://www.amazon.com/Smarter-Way-Learn-JavaScript-technology/dp/1497408180/ref=sr_1_1?ie=UTF8&qid=1444759970&sr=8-1&keywords=a+smarter+way+to+learn+javascript">A Smarter Way to Learn JavaScript</a>, by Mark Myers</li>
                 <li><a href="http://www.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647/ref=sr_1_1?ie=UTF8&qid=1444759995&sr=8-1&keywords=javascript+and+jquery">JavaScript & jQuery</a>, by Jon Duckett</li>
       			</section>
+
+            <section>
+              <h3>Next Class</h3>
+              <ul>
+                <li>Events</li>
+                <li>Calling &amp; Listening to Functions in the HTML</li>
+                <li>Preventing Defaults</li>
+                <li>Forms</li>
+                <li>Radio &amp; Submit Buttons</li>
+                <li>Timing Events</li>
+                <li>Animations</li>
+              </ul>
+            </section>
 
 			</div><!-- Close .slides -->
   		<footer>
