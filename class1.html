@@ -99,7 +99,7 @@
             </section>
 
             <section>
-              <h4>CSS</h4>
+              <h3>CSS</h3>
               <ul>
                 <li>CSS uses rules to display content in the browser.</li>
                 <li>Each rule has a selector and a declaration.</li>
@@ -182,6 +182,7 @@
             <section>
               <h3>What is a Script?</h3>
               <p>A script is a series of instructions that a computer can follow to achieve a goal, like a recipe.</p>
+              <br />
               <p>A computer solves tasks differently than humans, so you have to create your step-by-step instructions so that the computer can solve the task programmatically.</p>
             </section>
 
@@ -274,6 +275,26 @@
             </section>
 
             <section>
+              <h3>Answer</h3>
+              <p>Add a comment: // This is what the code does</p>
+              <p>You should have a main.js file in your gdi folder</p>
+              <p>Before the closing body tag, add the script tag with the link to the main.js</p>
+<pre>
+  <code>
+    &lt;body&gt;
+      &lt;script src="main.js" type="text/javascript"&gt;&lt;/script&gt;
+    &lt;/body&gt;
+  </code>
+</pre>
+<h4>in main.js</h4>
+<pre>
+  <code>
+    alert('Hello World!');
+  </code>
+</pre>
+            </section>
+
+            <section>
       				<h3>Variables</h3>
               <br />
               <p>A variable is a place to store values</p>
@@ -349,7 +370,21 @@
 				      <h3>Let's Develop It</h3>
               <br />
               <p>In your JS file, create a variable and give it a valid name and value. Then, display the value.</p>
-			     </section>
+			      </section>
+
+            <section>
+              <h3>Answer</h3>
+<pre>
+  <code>
+  // declare and assign a variable
+  var firstName = "Maren";
+
+  // display firstName. 
+  // you could also use document.write(firstName); or alert(firstName);
+  console.log(firstName);
+  </code>
+</pre>
+            </section>
 
             <section>
               <br />
@@ -459,6 +494,23 @@
       			</section>
 
             <section>
+              <h3>Answer</h3>
+<pre>
+  <code>
+    // creating numberOfKittens and numberOfPuppeis variables
+    var numberOfKittens = 3;
+    var numberOfPuppies = 6;
+
+    // add the animals together
+    var animalTotal = numberOfKittens + numberOfPuppies;
+
+    // console.logging animalTotal
+    console.log(animalTotal);
+  </code>
+</pre>
+            </section>
+
+            <section>
               <h3>Strings</h3>
               <p class="blue">Variables can be strings, groups of characters. You put your string in single or double quotes.</p>
               <pre>
@@ -536,6 +588,23 @@
               <br />
               <p>Create two variables, a first name and a last name, and then concatenate them (put them together) to make a full name. Don't forget to display your results!</p>
 			      </section>
+
+            <section>
+              <h3>Answer</h3>
+<pre>
+  <code>
+    // creating two variables
+    var fName = "Maren";
+    var lName = "Woodruff";
+    
+    // concatenating the first name and last name 
+    var fullName = fName + ' ' + lName;
+    
+    // console.log Maren Woodruff
+    console.log(fullName);
+  </code>
+</pre>
+            </section>
 
             <section>
               <h3>Functions</h3>
@@ -616,8 +685,8 @@
       var wallWidth = 5;
       var wallHeight = 4;
       //Use them in functions
-      getArea(wallWidth, wallHeight);
-      getArea(3, 5);
+      getArea(wallWidth, wallHeight); // outputs The area is 20
+      getArea(3, 5); // outputs The area is 15
     &lt;/script&gt;
 	</code>
 </pre>
@@ -629,6 +698,22 @@
               <br />
               <p>Turn the code you wrote to output someone's full name into a function, then call it.</p>
 			      </section>
+
+            <section>
+              <h3>Answer</h3>
+<pre>
+  <code>
+    function name(fName, lName) {
+      var fullName = fName + ' ' + lName;
+      // console.logging fullName
+      console.log(fullName);
+    }
+    
+    // calling the function with the parameters
+    name('Maren', 'Woodruff');
+  </code>
+</pre>
+            </section>
 
             <section>
               <h3>Returning Values</h3>
@@ -652,6 +737,24 @@
               <br />
               <p>Add a return statement to your name function. Use that function to set the value of a variable.</p>
 			      </section>
+
+            <section>
+              <h3>Answer</h3>
+<pre>
+  <code>
+    function name(fName, lName) {
+      var fullName = fName + ' ' + lName;
+      // returning fullName
+      return fullName;
+    }
+    // assigning the return to userName
+    var userName = name('Maren', 'Woodruff');
+
+    // console.log the userName
+    console.log(userName);
+  </code>
+</pre>
+            </section>
 
             <section>
               <h3>JS best practices</h3>
