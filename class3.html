@@ -53,7 +53,7 @@
 
             <section>
       			  <h3>Objects</h3>
-      			  <p>Objects let us store a collection of properties in name: value pairs.</p>
+      			  <p>Objects let us store a collection of properties in key/value pairs.</p>
 <pre>
   <code>
     var objectName = {
@@ -65,8 +65,7 @@
 </pre>
               
 <pre>
-  <code>
-    var aboutMe = {
+  <code>    var aboutMe = {
       hometown: 'Los Angeles, CA',
       hair: 'Dark Brown',
       likes: ['playing guitar', 'code'],
@@ -75,21 +74,36 @@
         day: 3
       }
     };
+    // keys: hometown, hair, likes, birthday
+    // values: string, string, array, object
 </code>
   </pre>
 			      </section>
 
             <section>
-              <h3>How to Create an Object</h3>
+              <h3>Programmers use a lot of name/value pairs</h3>
+              <ul>
+                <li><span class="yellow">HTML</span>- uses attribute names and values</li>
+                <li><span class="yellow">CSS</span>- uses property names and values</li>
+              <br />
+              <h4>in JS</h4>
+                <li><span class="yellow">variables</span>- have a name and you can assign it a value</li>
+                <li><span class="yellow">arrays</span>- have a name and a group of ordered values</li>
+                <li><span class="yellow">functions</span>- have a name, and a value that is a set of statements to run if the function is called</li>
+                <li><span class="yellow">objects</span>- consist of name/value pairs(names are referred to as 'keys')</li>
+              </ul>
+            </section>
+
+            <section>
+              <h3>Create an Object<small>(Literal Notation)</small></h3>
               <ol>
                 <li>the code begins like any variable, with the var keyword followed by a variable name</li>
                 <li>after the equals sign, you add <span class="yellow">curly braces</span>.</li>
                 <li>inside of the curly braces, you have <span class="yellow">name: value</span> pairs</li>
-                <li>each property begins with a <span class="yellow">name</span>, followed by a <span class="yellow">colon</span>, and then the <span class="yellow">value</span>.</li>
+                <li>each property begins with a <span class="yellow">key</span>, followed by a <span class="yellow">colon</span>, and then the <span class="yellow">value</span>.</li>
                 <li>each property definition ends with a <span class="yellow">comma</span>, except for the last one</li>
                 <li>the closing curly brace is followed by a semi-colon</li>
               </ol>
-              <h4>Remember</h4>
               <p>*** A property <span class="yellow">name</span> is always a <span class="yellow">string</span> so you don't have to put the names in quotes</p>
             </section>
 
@@ -129,13 +143,13 @@ aboutMe.hair = 'blue'; // will change my hair color to 'blue'</code>
 </pre>
               <p>Or delete them</p>
 <pre>
-  <code>delete aboutMe.gender; // not used</code>
+  <code>delete aboutMe.gender;</code>
 </pre>
       			</section>
 
             <section>
       			  <h3>Arrays of Objects</h3>
-      			  <p>Since arrays can hold any data type, they can also hold objects</p>
+      			  <p>Since arrays can hold any data type, they can also hold objects in order </p>
 <pre>
   <code>var myCats = [
   {
@@ -159,8 +173,8 @@ for (var i = 0; i &lt; myCats.length; i++) {
 			      </section>
 
             <section>
-      			  <h3>Arrays of Objects</h3>
-      			  <p>Just like other data types, objects can be passed into functions:</p>
+      			  <h3>Objects in Functions</h3>
+      			  <p>Just like other data types, an object can be passed into a function:</p>
 <pre>
   <code>var lizzieTheCat = {
   age: 18,
@@ -258,7 +272,7 @@ recipeIngredients(recipe);
             </section>
 
             <section>
-              <h3>Constructor Function</h3>
+              <h3>Constructor Notation</h3>
 <pre>
   <code>function Animal(age, color) {
   this.age: age;
@@ -270,13 +284,16 @@ recipeIngredients(recipe);
     console.log('Yum! I love ' + food + '.');
   };
 }
+// create instances of the object using the constructor function
+// Animal(18, 'grey', 'meow', 'tuna')
 var lizzieTheCat = new Animal(18, 'grey', 'meow', 'tuna');
 var dieselThePuppy = new Animal(1, 'white', 'ruff', 'carrots');</code>
 </pre>
               <h4>Things to Notice:</h4>
               <ul>
+                <li>Use this function as a template for creating multiple objects</li>
                 <li>The function name is capitalized</li>
-                <li>The <span class="yellow">new</span> keyword, which tells JS to create a new object</li>
+                <li>The <span class="yellow">new</span> keyword tells JS to create a new object</li>
               </ul>
             </section>
             <!-- var chocolateChipCookies = new Recipe('Oatmeal Marble Chocolate Chip 
@@ -291,8 +308,8 @@ of coffee', 'sugar', 'cream']); -->
               <p>The keyword <span class="yellow">this</span> references the element that the user has just interacted with:</p>
 <pre>
   <code>function Animal(age, color) {
-  this.age: age;
-  this.color: color;
+  this.age: age; // this refers to the containing object
+  this.color: color; // ends in a semi-colon
   this.noise: function(noise) {
     console.log(noise, noise);
   };
@@ -300,10 +317,10 @@ of coffee', 'sugar', 'cream']); -->
     console.log('Yum! I love ' + food + '.');
   };
 }
-var lizzieTheCat = new Animal(18, 'grey', 'meow', 'tuna');
+var lizzieTheCat = new Animal(18, 'grey', 'meow', 'tuna'); // arguments for the function
 var dieselThePuppy = new Animal(1, 'white', 'ruff', 'carrots');</code>
 </pre>
-              <p>It allows the constructor function to be flexible.</p>
+              <p>It is used instead of the object name to indicate that the property or method belongs to the obejct that 'this' function creates.</p>
             </section>
 
             <section>
@@ -455,7 +472,8 @@ var dieselThePuppy = new Animal(1, 'white', 'ruff', 'carrots');</code>
               <h3>DOM Access: By Id</h3>
               <p>You can find nodes by the id using this method:</p>
 <pre>
-  <code>document.getElementById('id');</code>
+  <code>document.getElementById('id');
+// document refers to the 'document object'</code>
 </pre>
               <p>To find the image with the id of 'kittenPic':</p>
 <pre>
@@ -518,7 +536,7 @@ for (var i = 0; i &lt; listItems.length; i++) {
 <pre>
   <code>document.getElementById('uniqueID'); //returns a single node</code>
 </pre>
-              <p>Any method that starts with "getElements" will return an <span class = "yellow">array</span> of nodes. To modify a single node, you will need to use bracket notation to select the correct one.</p>
+              <p>Any method that starts with "getElements" will return an <span class = "yellow">collection</span>(like an array) of nodes. To modify a single node, you will need to use bracket notation to select the correct one.</p>
 <pre>
   <code>document.getElementsByTagName('p'); //returns multiple nodes
 // to select a single paragraph use the tag name ('p') 
@@ -545,7 +563,7 @@ var oldSrc = imgKitten.src;
 // changes the KittenPic src to a new url
 imgKitten.src = 'http://placekitten.com/100/500';</code>
 </pre>
-              <p>***The equal sign and quotes tell you that you are looking at an <span class="yellow">attribute</span></p>
+              <p>***On the opening HTML element- the equal sign and quotes tell you that you are looking at an <span class="yellow">attribute</span></p>
             </section>
 
             <section>
@@ -564,6 +582,22 @@ var oldSrc = imgKitten.getAttribute('src');
 imgKitten.setAttribute('src', 'http://placekitten.com/100/500');</code>
 </pre>
               <p><span class="yellow">hasAttribute</span> will check to see whether an element has a particular attribute = true/false</p>
+            </section>
+
+            <section>
+              <h3>DOM Nodes: Getting and Setting Attributes<small>(cont)</small></h3>
+              <p>You can use <span class="yellow">className</span> to add to or update an element's class name:</p>
+<pre><code>&lt;img id="kittenPic" src="http://placekitten.com/200/300" alt="cat"/&gt;</code>
+</pre>  
+<p>We would change the src attribute this way:</p>
+<pre>
+  <code>// assigns #kittenPic to the variable imgKitten
+var imgKitten = document.getElementById('kittenPic');
+// adds the class name 'kitten' to the #kittenPic
+imgKitten.className('kitten');</code>
+</pre>
+              <p><span class="yellow">removeAttribute</span> will let you remove a particular attribute from an element</p>
+              <p>*** you might want to check if the attribute exists using hasAttribute first</p>
             </section>
 
             <section>
@@ -753,6 +787,8 @@ newDiv.appendChild(newParagraph);</code>
               <ul>
                 <li><a href="http://www.amazon.com/Smarter-Way-Learn-JavaScript-technology/dp/1497408180/ref=sr_1_1?ie=UTF8&qid=1444759970&sr=8-1&keywords=a+smarter+way+to+learn+javascript">A Smarter Way to Learn JavaScript</a>, by Mark Myers</li>
                 <li><a href="http://www.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647/ref=sr_1_1?ie=UTF8&qid=1444759995&sr=8-1&keywords=javascript+and+jquery">JavaScript & jQuery</a>, by Jon Duckett</li>
+              </ul>
+              <p>*** check out <a href="http://www.stackoverflow.com">stack overflow</a> if you have any questions</p>
       			</section>
 
             <section>
