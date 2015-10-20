@@ -80,8 +80,22 @@
 			      </section>
 
             <section>
+              <h3>How to Create an Object</h3>
+              <ol>
+                <li>the code begins like any variable, with the var keyword followed by a variable name</li>
+                <li>after the equals sign, you add <span class="yellow">curly braces</span>.</li>
+                <li>inside of the curly braces, you have <span class="yellow">name: value</span> pairs</li>
+                <li>each property begins with a <span class="yellow">name</span>, followed by a <span class="yellow">colon</span>, and then the <span class="yellow">value</span>.</li>
+                <li>each property definition ends with a <span class="yellow">comma</span>, except for the last one</li>
+                <li>the closing curly brace is followed by a semi-colon</li>
+              </ol>
+              <h4>Remember</h4>
+              <p>*** A property <span class="yellow">name</span> is always a <span class="yellow">string</span> so you don't have to put the names in quotes</p>
+            </section>
+
+            <section>
 			        <h3>Accessing Objects</h3>
-			        <p>You can retrieve values using "dot notation"</p>
+			        <p>You can retrieve values using <span class="yellow">"dot notation"</span></p>
 <pre>
   <code>
     var aboutMe = {
@@ -91,11 +105,9 @@
     var myHometown = aboutMe.hometown;
   </code>
 </pre>
-              <p>Or using "bracket notation" (like arrays)</p>
+              <p>Or using <span class="yellow">"bracket notation"</span> (like arrays). The difference is that in the brackets, you add the <span class="yellow">property name</span> in quotes, instead of a number</p>
 <pre>
-  <code>
-    var myHair = aboutMe['hair'];
-  </code>
+  <code>var myHair = aboutMe['hair'];</code>
 </pre>  
               <p>retrieve values with objectName.name or objectName['name']</p>
 			      </section>
@@ -140,7 +152,7 @@ for (var i = 0; i &lt; myCats.length; i++) {
   var myCat = myCats[i];
   console.log(myCat.name + ' is ' + myCat.age + ' years old.');
   // will output Lizzie is 18 years old.
-  // output Daemon is 1 years old.
+  // then will output Daemon is 1 years old.
 }
   </code>
 </pre>
@@ -198,6 +210,7 @@ describeCat(lizzieTheCat);
 
             <section>
               <h3>Answer</h3>
+              <p>in main.js</p>
 <pre>
   <code>var recipe = {
   recipeTitle: 'Oatmeal Marble Chocolate Chip Cookies',
@@ -242,6 +255,78 @@ recipeIngredients(recipe);
     // output will console.log: Yum, I love cuban sandwiches
   </code>
 </pre>
+            </section>
+
+            <section>
+              <h3>Constructor Function</h3>
+<pre>
+  <code>function Animal(age, color) {
+  this.age: age;
+  this.color: color;
+  this.noise: function(noise) {
+    console.log(noise, noise);
+  };
+  this.food: function(food) {
+    console.log('Yum! I love ' + food + '.');
+  };
+}
+var lizzieTheCat = new Animal(18, 'grey', 'meow', 'tuna');
+var dieselThePuppy = new Animal(1, 'white', 'ruff', 'carrots');</code>
+</pre>
+              <h4>Things to Notice:</h4>
+              <ul>
+                <li>The function name is capitalized</li>
+                <li>The <span class="yellow">new</span> keyword, which tells JS to create a new object</li>
+              </ul>
+            </section>
+            <!-- var chocolateChipCookies = new Recipe('Oatmeal Marble Chocolate Chip 
+Cookies', 24, ['oatmeal', 'chocolate chips', 'baking chocolate', 
+'butter', 'flour', 'brown sugar', 'white sugar', 'eggs', 'salt', 
+'vanilla', 'baking soda', 'baking powder']);
+var morningCupOfCoffee = new Recipe('Morning Cuppa', 1, ['large scoup 
+of coffee', 'sugar', 'cream']); -->
+
+            <section>
+              <h3>This</h3>
+              <p>The keyword <span class="yellow">this</span> references the element that the user has just interacted with:</p>
+<pre>
+  <code>function Animal(age, color) {
+  this.age: age;
+  this.color: color;
+  this.noise: function(noise) {
+    console.log(noise, noise);
+  };
+  this.food: function(food) {
+    console.log('Yum! I love ' + food + '.');
+  };
+}
+var lizzieTheCat = new Animal(18, 'grey', 'meow', 'tuna');
+var dieselThePuppy = new Animal(1, 'white', 'ruff', 'carrots');</code>
+</pre>
+              <p>It allows the constructor function to be flexible.</p>
+            </section>
+
+            <section>
+              <h3>Object Prototypes</h3>
+<pre>
+  <code>function Animal(age, color) {
+  this.age: age;
+  this.color: color;
+}
+Animal.prototype.noise = function(noise) {
+  console.log(noise, noise);
+};
+Animal.prototype.food: function(food) {
+  console.log('Yum! I love ' + food + '.');
+};
+var lizzieTheCat = new Animal(18, 'grey', 'meow', 'tuna');
+var dieselThePuppy = new Animal(1, 'white', 'ruff', 'carrots');</code>
+</pre>
+              <ul>
+                <li>Prototypes help keep your code dry &amp; help with performance</li>
+                <li>Objects can have prototype <span class="yellow">properties</span> as well as prototype <span class="yellow">methods</span></li>
+<pre><code>Animal.prototype.lovable = true;</code></pre>
+              </ul>
             </section>
 
             <section>
@@ -460,6 +545,7 @@ var oldSrc = imgKitten.src;
 // changes the KittenPic src to a new url
 imgKitten.src = 'http://placekitten.com/100/500';</code>
 </pre>
+              <p>***The equal sign and quotes tell you that you are looking at an <span class="yellow">attribute</span></p>
             </section>
 
             <section>
@@ -477,6 +563,7 @@ var oldSrc = imgKitten.getAttribute('src');
 // changes the KittenPic src to a new url
 imgKitten.setAttribute('src', 'http://placekitten.com/100/500');</code>
 </pre>
+              <p><span class="yellow">hasAttribute</span> will check to see whether an element has a particular attribute = true/false</p>
             </section>
 
             <section>
