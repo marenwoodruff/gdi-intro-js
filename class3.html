@@ -274,12 +274,12 @@ recipeIngredients(recipe);
               <h3>Constructor Notation</h3>
 <pre>
   <code>function Animal(age, color) {
-  this.age: age;
-  this.color: color;
-  this.noise: function(noise) {
+  this.age = age;
+  this.color = color;
+  this.noise = function(noise) {
     console.log(noise, noise);
   };
-  this.food: function(food) {
+  this.food = function(food) {
     console.log('Yum! I love ' + food + '.');
   };
 }
@@ -307,9 +307,9 @@ of coffee', 'sugar', 'cream']); -->
               <p>The keyword <span class="yellow">this</span> references the element that the user has just interacted with:</p>
 <pre>
   <code>function Animal(age, color) {
-  this.age: age; // this refers to the containing object
-  this.color: color; // ends in a semi-colon
-  this.noise: function(noise) {
+  this.age = age; // this refers to the containing object
+  this.color = color; // ends in a semi-colon
+  this.noise = function(noise) {
     console.log(noise, noise);
   };
   this.food: function(food) {
@@ -326,8 +326,8 @@ var dieselThePuppy = new Animal(1, 'white', 'ruff', 'carrots');</code>
               <h3>Object Prototypes</h3>
 <pre>
   <code>function Animal(age, color) {
-  this.age: age;
-  this.color: color;
+  this.age = age;
+  this.color = color;
 }
 Animal.prototype.noise = function(noise) {
   console.log(noise, noise);
